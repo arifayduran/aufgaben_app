@@ -11,7 +11,7 @@ class _Task443Calculator extends State<Task443Calculator> {
   @override
   Widget build(BuildContext context) {
     int output = 0;
-    int input = 0;
+    // int input = 0;
     int n1 = 1;
     int n2 = 2;
     int n3 = 3;
