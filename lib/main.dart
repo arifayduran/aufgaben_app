@@ -1,5 +1,10 @@
 import 'package:aufgaben_app/screens/task_4_4_3_bonus.dart';
 import 'package:aufgaben_app/screens/jan_task_steel.dart';
+import 'package:aufgaben_app/screens/task_4_4_3_wiederholung_1.dart';
+import 'package:aufgaben_app/screens/task_4_4_3_wiederholung_2.dart';
+import 'package:aufgaben_app/screens/task_4_4_3_wiederholung_3.dart';
+import 'package:aufgaben_app/screens/task_4_4_3_wiederholung_repo_class.dart';
+import 'package:aufgaben_app/screens/task_4_4_3_wiederholung_repo_class_warenkorb.dart';
 import 'package:flutter/material.dart';
 
 /* ADD BACK BUTTON + IMPORT PACKAGE + ADD TO LIST
@@ -17,12 +22,12 @@ import 'package:flutter/material.dart';
 
 const Map<String, Widget> tasks = {
   'Jan Task Steel': JanTaskSteel(),
-  "Tasksheet 4.4.3": Task443Calculator(),
-  "leer1": Placeholder(),
-  "leer2": Placeholder(),
-  "leer3": Placeholder(),
-  "leer4": Placeholder(),
-  "leer5": Placeholder(),
+  "Tasksheet 4.4.3 Bonus": Task443Calculator(),
+  "Wiederholung 4.4.3 Aufgabe 1": Task443Wiederholung1(),
+  "Wiederholung 4.4.3 Aufgabe 2": Task443Wiederholung2(),
+  "Wiederholung 4.4.3 Aufgabe 3": Task443Wiederholung3(),
+  "ListView Repository-Klasse": BonnusRepoClassList(),
+  "ListView Warenkorb": BonnusRepoClassListWarenkorb(),
   "leer6": Placeholder(),
   "leer7": Placeholder(),
   "leer8": Placeholder(),

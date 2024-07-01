@@ -26,7 +26,7 @@ class _Task443Calculator extends State<Task443Calculator> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text("Tasksheet 4.4.3"),
+          title: const Text("Tasksheet 4.4.3 Bonus"),
           foregroundColor: Colors.white,
           backgroundColor: Colors.green,
           centerTitle: true,
