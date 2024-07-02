@@ -5,6 +5,7 @@ import 'package:aufgaben_app/screens/task_4_4_3_wiederholung_2.dart';
 import 'package:aufgaben_app/screens/task_4_4_3_wiederholung_3.dart';
 import 'package:aufgaben_app/screens/task_4_4_3_wiederholung_repo_class.dart';
 import 'package:aufgaben_app/screens/task_4_4_3_wiederholung_repo_class_warenkorb.dart';
+import 'package:aufgaben_app/screens/task_4_4_4_wichtige_widgets_2.dart';
 import 'package:flutter/material.dart';
 
 /* ADD BACK BUTTON + IMPORT PACKAGE + ADD TO LIST
@@ -28,7 +29,7 @@ const Map<String, Widget> tasks = {
   "Wiederholung 4.4.3 Aufgabe 3": Task443Wiederholung3(),
   "ListView Repository-Klasse": BonnusRepoClassList(),
   "ListView Warenkorb": BonnusRepoClassListWarenkorb(),
-  "leer6": Placeholder(),
+  "4.4.3 Wichtige Widgets II": Task444WichtigeWidgets2(),
   "leer7": Placeholder(),
   "leer8": Placeholder(),
   "leer9": Placeholder(),
