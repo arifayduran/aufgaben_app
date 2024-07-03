@@ -29,8 +29,8 @@
 
 import 'package:flutter/material.dart';
 
-class Task444WichtigeWidgets2 extends StatelessWidget {
-  const Task444WichtigeWidgets2({super.key});
+class Task443WichtigeWidgets2 extends StatelessWidget {
+  const Task443WichtigeWidgets2({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -38,9 +38,10 @@ class Task444WichtigeWidgets2 extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           title: const Text(
-            "4.4.3 Wichtige Widgets II",
+            "4.5.3 Wichtige Widgets III",
           ),
           centerTitle: true,
+          backgroundColor: Colors.amber,
           leading: IconButton(
             icon: const Icon(Icons.arrow_back_ios_new),
             onPressed: () {

@@ -1,52 +1,43 @@
-import 'package:aufgaben_app/screens/4_4.dart';
-import 'package:aufgaben_app/screens/4_5.dart';
+import 'package:aufgaben_app/screens/4_5/4_5_2_wichtige_widgets_3.dart';
+import 'package:aufgaben_app/screens/4_5/4_5_3_kombination.dart';
+import 'package:aufgaben_app/screens/4_5/4_5_3_wichtige_widgets_4.dart';
 import 'package:flutter/material.dart';
 
-/* ADD BACK BUTTON + IMPORT PACKAGE + ADD TO LIST
-        appBar: AppBar(
-          title: const Text("..."),
-          centerTitle: true,
-          backgroundColor: Colors.amber,
-          leading: IconButton(
-            icon: const Icon(Icons.arrow_back_ios_new),
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-          ),
-        ),
-*/
-
-const Map<String, Widget> tasks = {
-  '4.4.': Tasks44(),
-  "4.5.": Tasks45(),
+const Map<String, Widget> tasks45 = {
+  "Wichtige Widgets III": Task443WichtigeWidgets2(),
+  "Wichtige Widgets IV": Task453WichtigeWidgets4(),
+  "Kombination": Kombination453(),
 };
 
-void main() {
-  runApp(const HomeScreen());
-}
-
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class Tasks45 extends StatefulWidget {
+  const Tasks45({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<Tasks45> createState() => _Tasks45State();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _Tasks45State extends State<Tasks45> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
             appBar: AppBar(
-              title: const Text('Aufgaben'),
-              backgroundColor: Colors.redAccent,
+              title: const Text("Aufgaben von 4.5."),
+              centerTitle: true,
+              backgroundColor: Colors.amber,
+              leading: IconButton(
+                icon: const Icon(Icons.arrow_back_ios_new),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
             ),
             body: Center(
               child: SizedBox(
                 width: 340,
                 height: 650,
                 child: GridView.builder(
-                    itemCount: tasks.keys.length,
+                    itemCount: tasks45.keys.length,
                     shrinkWrap: true,
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
@@ -55,8 +46,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             crossAxisSpacing: 30,
                             mainAxisSpacing: 20),
                     itemBuilder: (BuildContext context, int index) {
-                      String title = tasks.keys.elementAt(index);
-                      Widget pageWidget = tasks.values.elementAt(index);
+                      String title = tasks45.keys.elementAt(index);
+                      Widget pageWidget = tasks45.values.elementAt(index);
                       return ElevatedButton(
                         onPressed: () {
                           Navigator.push(
@@ -74,7 +65,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     BorderRadius.all(Radius.circular(10))),
                           ),
                           backgroundColor:
-                              WidgetStateProperty.all<Color>(Colors.redAccent),
+                              WidgetStateProperty.all<Color>(Colors.amber),
                         ),
                         child: Text(
                           title,

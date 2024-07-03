@@ -25,7 +25,7 @@ class Task443Wiederholung3 extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           title: const Text(
-            "ListView Exercise",
+            "ListView von Map",
             style: TextStyle(color: Colors.white),
           ),
           centerTitle: false,
