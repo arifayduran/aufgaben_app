@@ -1,12 +1,10 @@
 import 'package:aufgaben_app/screens/4_4/4_4_3_free_bonus.dart';
 import 'package:aufgaben_app/screens/4_4/4_4_3_jan_task_steel.dart';
 import 'package:aufgaben_app/screens/4_4/4_4_3_abcde.dart';
-import 'package:aufgaben_app/screens/4_4/4_4_3_sizedBox_exercise.dart';
+import 'package:aufgaben_app/screens/4_4/4_4_3_sizedbox_exercise.dart';
 import 'package:aufgaben_app/screens/4_4/4_4_5_listview_map.dart';
 import 'package:aufgaben_app/screens/4_4/4_4_5_listview_class.dart';
 import 'package:aufgaben_app/screens/4_4/4_4_5_listview_warenkorb.dart';
-import 'package:aufgaben_app/screens/4_5/4_5_2_wichtige_widgets_3.dart';
-import 'package:aufgaben_app/screens/4_5/4_5_3_wichtige_widgets_4.dart';
 import 'package:flutter/material.dart';
 
 const Map<String, Widget> tasks44 = {
@@ -17,8 +15,6 @@ const Map<String, Widget> tasks44 = {
   "ListView von Map": Task443Wiederholung3(),
   "ListView von Klasse": BonnusRepoClassList(),
   "ListView Warenkorb": BonnusRepoClassListWarenkorb(),
-  "Wichtige Widgets III": Task443WichtigeWidgets2(),
-  "Wichtige Widgets IV": Task453WichtigeWidgets4(),
 };
 
 class Tasks44 extends StatefulWidget {
