@@ -81,6 +81,8 @@ class BonnusRepoClassListWarenkorb extends StatefulWidget {
 
 class _BonnusRepoClassListWarenkorbState
     extends State<BonnusRepoClassListWarenkorb> {
+  int itemCount = shoppingCart.length;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -101,6 +103,30 @@ class _BonnusRepoClassListWarenkorbState
             },
           ),
         ),
+        floatingActionButton: SizedBox(
+          height: 75,
+          width: 60,
+          child: Stack(
+            children: [
+              Positioned(
+                right: 4,
+                bottom: 4,
+                child: FloatingActionButton(
+                  onPressed: () {
+                    cardBottomSheet(context);
+                  },
+                  elevation: 2,
+                  backgroundColor: const Color.fromARGB(255, 73, 148, 236),
+                  child: const Icon(
+                    Icons.shopping_cart,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              itemCounter(),
+            ],
+          ),
+        ),
         body: Center(
           child: ListView.builder(
             itemCount: products.length,
@@ -114,6 +140,7 @@ class _BonnusRepoClassListWarenkorbState
                 onTap: () {
                   setState(() {
                     incrementProduct++;
+                    itemCount = shoppingCart.length + 1;
                     shoppingCart[incrementProduct] = products[index];
                   });
                 },
@@ -137,6 +164,54 @@ class _BonnusRepoClassListWarenkorbState
         ),
       ),
     );
+  }
+
+  void cardBottomSheet(BuildContext context) {
+    showBottomSheet(
+      context: context,
+      builder: (BuildContext context) {
+        return SizedBox.expand(
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                const Text('Bottom sheet'),
+                ElevatedButton(
+                  child: const Text('Close'),
+                  onPressed: () => Navigator.pop(context),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  Positioned itemCounter() {
+    if (itemCount == 0) {
+      return const Positioned(
+        child: SizedBox(),
+      );
+    } else {
+      return Positioned(
+        right: 0,
+        top: 0,
+        child: Container(
+          margin: const EdgeInsets.fromLTRB(0, 5, 5, 0),
+          height: 20,
+          width: 20,
+          decoration: BoxDecoration(
+              color: Colors.red, borderRadius: BorderRadius.circular(25)),
+          child: Center(
+            child: Text(
+              itemCount.toString(),
+            ),
+          ),
+        ),
+      );
+    }
   }
 }
 

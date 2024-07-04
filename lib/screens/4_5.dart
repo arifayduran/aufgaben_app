@@ -1,12 +1,16 @@
 import 'package:aufgaben_app/screens/4_5/4_5_2_wichtige_widgets_3.dart';
 import 'package:aufgaben_app/screens/4_5/4_5_3_kombination.dart';
 import 'package:aufgaben_app/screens/4_5/4_5_3_wichtige_widgets_4.dart';
+import 'package:aufgaben_app/screens/4_5/4_5_5_bonus_komplexe_oberfl%C3%A4che.dart';
+import 'package:aufgaben_app/screens/4_5/4_5_5_wichtige_widgets_5.dart';
 import 'package:flutter/material.dart';
 
 const Map<String, Widget> tasks45 = {
   "Wichtige Widgets III": Task443WichtigeWidgets2(),
   "Wichtige Widgets IV": Task453WichtigeWidgets4(),
   "Kombination": Kombination453(),
+  "Wichtige Widgets V": WichtigeWidgets5(),
+  "Bonus Komplexe Oberfläche": BonusKomplexeOberflaeche(),
 };
 
 class Tasks45 extends StatefulWidget {
