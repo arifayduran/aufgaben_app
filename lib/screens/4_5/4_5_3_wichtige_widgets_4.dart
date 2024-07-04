@@ -187,3 +187,11 @@ class Task453WichtigeWidgets4 extends StatelessWidget {
     );
   }
 }
+
+void _showMySnackbar(BuildContext context, String message) {
+  ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(
+      content: Text(message),
+    ),
+  );
+}
