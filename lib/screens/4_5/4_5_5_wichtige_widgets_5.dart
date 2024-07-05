@@ -55,6 +55,32 @@ import 'package:flutter/material.dart';
 class WichtigeWidgets5 extends StatelessWidget {
   const WichtigeWidgets5({super.key});
 
+  PersistentBottomSheetController _showPersistentBottomSheet(
+      BuildContext context) {
+    return showBottomSheet(
+        context: context,
+        builder: (BuildContext context) {
+          return Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text("Text"),
+              const Divider(),
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: const Text("Close"),
+              ),
+              Image.asset(
+                "assets/images/steel.png",
+                width: 100,
+                height: 100,
+              ),
+            ],
+          );
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -127,28 +153,7 @@ class WichtigeWidgets5 extends StatelessWidget {
                 ),
                 ElevatedButton(
                     onPressed: () {
-                      showBottomSheet(
-                          context: context,
-                          builder: (BuildContext context) {
-                            return Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                const Text("Text"),
-                                const Divider(),
-                                TextButton(
-                                  onPressed: () {
-                                    Navigator.of(context).pop();
-                                  },
-                                  child: const Text("Close"),
-                                ),
-                                Image.asset(
-                                  "assets/images/steel.png",
-                                  width: 100,
-                                  height: 100,
-                                ),
-                              ],
-                            );
-                          });
+                      _showPersistentBottomSheet(context);
                     },
                     child: const Text("Show Persistent Bottom Sheet")),
                 const SizedBox(
