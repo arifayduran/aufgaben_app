@@ -155,21 +155,7 @@ class Task453WichtigeWidgets4 extends StatelessWidget {
                           TextButton(
                               onPressed: () {
                                 Navigator.of(context).pop();
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
-                                    content:
-                                        const Text("SnackBar is displayed"),
-                                    duration: const Duration(seconds: 3),
-                                    action: SnackBarAction(
-                                      label: 'OK',
-                                      onPressed: () {},
-                                    ),
-                                    behavior: SnackBarBehavior.floating,
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(8),
-                                    ),
-                                  ),
-                                );
+                                _showMySnackbar(context, "Snackbar");
                               },
                               child: const Text("OK"))
                         ],
@@ -188,10 +174,19 @@ class Task453WichtigeWidgets4 extends StatelessWidget {
   }
 }
 
-void _showMySnackbar(BuildContext context, String message) {
-  ScaffoldMessenger.of(context).showSnackBar(
+void _showMySnackbar(BuildContext contextt, String message) {
+  ScaffoldMessenger.of(contextt).showSnackBar(
     SnackBar(
       content: Text(message),
+      duration: const Duration(seconds: 3),
+      action: SnackBarAction(
+        label: 'OK',
+        onPressed: () {},
+      ),
+      behavior: SnackBarBehavior.floating,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(8),
+      ),
     ),
   );
 }
