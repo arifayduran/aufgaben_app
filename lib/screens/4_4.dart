@@ -27,64 +27,61 @@ class Tasks44 extends StatefulWidget {
 class _Tasks44State extends State<Tasks44> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        home: Scaffold(
-            appBar: AppBar(
-              title: const Text("Aufgaben von 4.4."),
-              centerTitle: true,
-              backgroundColor: const Color.fromARGB(255, 73, 148, 236),
-              leading: IconButton(
-                icon: const Icon(Icons.arrow_back_ios_new),
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-              ),
-            ),
-            body: Center(
-              child: SizedBox(
-                width: 340,
-                height: 650,
-                child: GridView.builder(
-                    itemCount: tasks44.keys.length,
-                    shrinkWrap: true,
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2,
-                            mainAxisExtent: 80,
-                            crossAxisSpacing: 30,
-                            mainAxisSpacing: 20),
-                    itemBuilder: (BuildContext context, int index) {
-                      String title = tasks44.keys.elementAt(index);
-                      Widget pageWidget = tasks44.values.elementAt(index);
-                      return ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => pageWidget),
-                          );
-                        },
-                        style: ButtonStyle(
-                          elevation: const WidgetStatePropertyAll(7),
-                          padding:
-                              const WidgetStatePropertyAll(EdgeInsets.all(10)),
-                          shape: const WidgetStatePropertyAll(
-                            RoundedRectangleBorder(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(10))),
-                          ),
-                          backgroundColor: WidgetStateProperty.all<Color>(
-                              const Color.fromARGB(255, 73, 148, 236)),
-                        ),
-                        child: Text(
-                          title,
-                          style: const TextStyle(
-                            color: Colors.black,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
+    return Scaffold(
+        appBar: AppBar(
+          title: const Text("Aufgaben von 4.4."),
+          centerTitle: true,
+          backgroundColor: const Color.fromARGB(255, 73, 148, 236),
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back_ios_new),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
+        ),
+        body: Center(
+          child: SizedBox(
+            width: 340,
+            height: 650,
+            child: GridView.builder(
+                itemCount: tasks44.keys.length,
+                shrinkWrap: true,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    mainAxisExtent: 80,
+                    crossAxisSpacing: 30,
+                    mainAxisSpacing: 20),
+                itemBuilder: (BuildContext context, int index) {
+                  String title = tasks44.keys.elementAt(index);
+                  Widget pageWidget = tasks44.values.elementAt(index);
+                  return ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => pageWidget),
                       );
-                    }),
-              ),
-            )));
+                    },
+                    style: ButtonStyle(
+                      elevation: const WidgetStatePropertyAll(7),
+                      padding: const WidgetStatePropertyAll(EdgeInsets.all(10)),
+                      shape: const WidgetStatePropertyAll(
+                        RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(10))),
+                      ),
+                      backgroundColor: WidgetStateProperty.all<Color>(
+                          const Color.fromARGB(255, 73, 148, 236)),
+                    ),
+                    child: Text(
+                      title,
+                      style: const TextStyle(
+                        color: Colors.black,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  );
+                }),
+          ),
+        ));
   }
 }

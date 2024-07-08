@@ -85,8 +85,7 @@ class _BonnusRepoClassListWarenkorbState
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
+    return Scaffold(
         bottomNavigationBar: const MyBottomNavigationBar(),
         appBar: AppBar(
           title: const Text(
@@ -162,7 +161,7 @@ class _BonnusRepoClassListWarenkorbState
             },
           ),
         ),
-      ),
+      
     );
   }
 
@@ -225,8 +224,7 @@ class Warenkorb extends StatefulWidget {
 class _WarenkorbState extends State<Warenkorb> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
+    return Scaffold(
         bottomNavigationBar: const MyBottomNavigationBar(),
         appBar: AppBar(
           title: const Text(
@@ -282,7 +280,7 @@ class _WarenkorbState extends State<Warenkorb> {
             ],
           ),
         ),
-      ),
+      
     );
   }
 }

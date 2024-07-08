@@ -1,32 +1,10 @@
-import 'package:aufgaben_app/screens/4_5/4_5_2_wichtige_widgets_3.dart';
-import 'package:aufgaben_app/screens/4_5/4_5_3_kombination.dart';
-import 'package:aufgaben_app/screens/4_5/4_5_3_wichtige_widgets_4.dart';
-import 'package:aufgaben_app/screens/4_5/4_5_5_bonus_komplexe_oberfl%C3%A4che.dart';
-import 'package:aufgaben_app/screens/4_5/4_5_5_wichtige_widgets_5.dart';
-
 import 'package:flutter/material.dart';
+import 'package:aufgaben_app/screens/4_4.dart';
+import 'package:aufgaben_app/screens/4_5.dart';
 
-const Map<String, Widget> tasks45 = {
-  "Wichtige Widgets III": Task443WichtigeWidgets2(),
-  "Wichtige Widgets IV": Task453WichtigeWidgets4(),
-  "Kombination": Kombination453(),
-  "Wichtige Widgets V": WichtigeWidgets5(),
-  "Bonus Komplexe Oberfläche": BonusKomplexeOberflaeche(),
-};
-
-class Tasks45 extends StatefulWidget {
-  const Tasks45({super.key});
-
-  @override
-  State<Tasks45> createState() => _Tasks45State();
-}
-
-class _Tasks45State extends State<Tasks45> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
+/* ADD BACK BUTTON + IMPORT PACKAGE + ADD TO LIST
         appBar: AppBar(
-          title: const Text("Aufgaben von 4.5."),
+          title: const Text("..."),
           centerTitle: true,
           backgroundColor: Colors.amber,
           leading: IconButton(
@@ -36,12 +14,29 @@ class _Tasks45State extends State<Tasks45> {
             },
           ),
         ),
+*/
+
+const Map<String, Widget> tasks = {
+  '4.4.': Tasks44(),
+  "4.5.": Tasks45(),
+};
+
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: const Text('Aufgaben'),
+          backgroundColor: Colors.redAccent,
+        ),
         body: Center(
           child: SizedBox(
             width: 340,
             height: 650,
             child: GridView.builder(
-                itemCount: tasks45.keys.length,
+                itemCount: tasks.keys.length,
                 shrinkWrap: true,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
@@ -49,8 +44,8 @@ class _Tasks45State extends State<Tasks45> {
                     crossAxisSpacing: 30,
                     mainAxisSpacing: 20),
                 itemBuilder: (BuildContext context, int index) {
-                  String title = tasks45.keys.elementAt(index);
-                  Widget pageWidget = tasks45.values.elementAt(index);
+                  String title = tasks.keys.elementAt(index);
+                  Widget pageWidget = tasks.values.elementAt(index);
                   return ElevatedButton(
                     onPressed: () {
                       Navigator.push(
@@ -67,7 +62,7 @@ class _Tasks45State extends State<Tasks45> {
                                 BorderRadius.all(Radius.circular(10))),
                       ),
                       backgroundColor:
-                          WidgetStateProperty.all<Color>(Colors.amber),
+                          WidgetStateProperty.all<Color>(Colors.redAccent),
                     ),
                     child: Text(
                       title,

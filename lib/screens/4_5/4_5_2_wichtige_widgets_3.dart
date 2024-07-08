@@ -34,8 +34,7 @@ class Task443WichtigeWidgets2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
+    return Scaffold(
         appBar: AppBar(
           title: const Text(
             "4.5.3 Wichtige Widgets III",
@@ -132,7 +131,7 @@ class Task443WichtigeWidgets2 extends StatelessWidget {
             ),
           ],
         ),
-      ),
+      
     );
   }
 }

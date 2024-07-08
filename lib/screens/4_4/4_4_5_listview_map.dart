@@ -21,48 +21,46 @@ class Task443Wiederholung3 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text(
-            "ListView von Map",
-            style: TextStyle(color: Colors.white),
-          ),
-          centerTitle: false,
-          backgroundColor: const Color.fromARGB(255, 73, 148, 236),
-          leading: IconButton(
-            icon: const Icon(Icons.arrow_back_ios_new),
-            color: Colors.white,
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-          ),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          "ListView von Map",
+          style: TextStyle(color: Colors.white),
         ),
-        body: Center(
-          child: ListView.builder(
-            itemCount: products.length,
-            itemBuilder: (BuildContext context, int index) {
-              return ListTile(
-                dense: false,
-                leadingAndTrailingTextStyle: const TextStyle(
-                    color: Color.fromARGB(255, 73, 148, 236),
-                    fontWeight: FontWeight.bold),
-                leading: const Icon(
-                  Icons.shopping_cart,
-                  color: Colors.grey,
-                ),
-                horizontalTitleGap: 30,
-                title: Text(
-                  products.keys.toList()[index],
-                  style: const TextStyle(letterSpacing: 3),
-                ),
-                trailing: Text(
-                  "\$${products.values.toList()[index].toStringAsFixed(2).replaceAll('.', ',')}",
-                  style: const TextStyle(fontSize: 15),
-                ),
-              );
-            },
-          ),
+        centerTitle: false,
+        backgroundColor: const Color.fromARGB(255, 73, 148, 236),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios_new),
+          color: Colors.white,
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        ),
+      ),
+      body: Center(
+        child: ListView.builder(
+          itemCount: products.length,
+          itemBuilder: (BuildContext context, int index) {
+            return ListTile(
+              dense: false,
+              leadingAndTrailingTextStyle: const TextStyle(
+                  color: Color.fromARGB(255, 73, 148, 236),
+                  fontWeight: FontWeight.bold),
+              leading: const Icon(
+                Icons.shopping_cart,
+                color: Colors.grey,
+              ),
+              horizontalTitleGap: 30,
+              title: Text(
+                products.keys.toList()[index],
+                style: const TextStyle(letterSpacing: 3),
+              ),
+              trailing: Text(
+                "\$${products.values.toList()[index].toStringAsFixed(2).replaceAll('.', ',')}",
+                style: const TextStyle(fontSize: 15),
+              ),
+            );
+          },
         ),
       ),
     );

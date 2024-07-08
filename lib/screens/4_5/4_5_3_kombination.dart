@@ -29,8 +29,7 @@ class Kombination453 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
+    return Scaffold(
         appBar: AppBar(
           title: const Text("Kombination"),
           centerTitle: true,
@@ -100,7 +99,7 @@ class Kombination453 extends StatelessWidget {
             ],
           ),
         ),
-      ),
+      
     );
   }
 }

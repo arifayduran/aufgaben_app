@@ -9,68 +9,66 @@ class Task443Wiederholung1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text(
-            "ABCDE",
-            style: TextStyle(color: Colors.white),
-          ),
-          centerTitle: false,
-          backgroundColor: const Color.fromARGB(255, 73, 148, 236),
-          leading: IconButton(
-            icon: const Icon(Icons.arrow_back_ios_new),
-            color: Colors.white,
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-          ),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          "ABCDE",
+          style: TextStyle(color: Colors.white),
         ),
-        body: const Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "A",
-                    style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.amber,
-                        fontWeight: FontWeight.bold),
-                  ),
-                  Text(
-                    "B",
-                    style: TextStyle(fontSize: 30, color: Colors.red),
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "C",
-                    style: TextStyle(
+        centerTitle: false,
+        backgroundColor: const Color.fromARGB(255, 73, 148, 236),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios_new),
+          color: Colors.white,
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        ),
+      ),
+      body: const Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "A",
+                  style: TextStyle(
                       fontSize: 20,
-                      color: Colors.blue,
-                    ),
+                      color: Colors.amber,
+                      fontWeight: FontWeight.bold),
+                ),
+                Text(
+                  "B",
+                  style: TextStyle(fontSize: 30, color: Colors.red),
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "C",
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.blue,
                   ),
-                  Text(
-                    "D",
-                    style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.green,
-                        fontStyle: FontStyle.italic),
-                  ),
-                ],
-              ),
-              Text(
-                "E",
-                style: TextStyle(fontSize: 20),
-              )
-            ],
-          ),
+                ),
+                Text(
+                  "D",
+                  style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.green,
+                      fontStyle: FontStyle.italic),
+                ),
+              ],
+            ),
+            Text(
+              "E",
+              style: TextStyle(fontSize: 20),
+            )
+          ],
         ),
       ),
     );
