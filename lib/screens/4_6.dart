@@ -1,13 +1,20 @@
-import 'package:aufgaben_app/screens/4_6.dart';
+import 'package:aufgaben_app/screens/4_6/4_6_1_navigation.dart';
 import 'package:flutter/material.dart';
-import 'package:aufgaben_app/screens/4_4.dart';
-import 'package:aufgaben_app/screens/4_5.dart';
 
-/* ADD BACK BUTTON + IMPORT PACKAGE + ADD TO LIST
+const Map<String, Widget> tasks46 = {
+  "FAB Navigation": FabNavigation(),
+};
+
+class Tasks46 extends StatelessWidget {
+  const Tasks46({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
         appBar: AppBar(
-          title: const Text("..."),
+          title: const Text("Aufgaben von 4.6."),
           centerTitle: true,
-          backgroundColor: Colors.amber,
+          backgroundColor: Colors.yellow,
           leading: IconButton(
             icon: const Icon(Icons.arrow_back_ios_new),
             onPressed: () {
@@ -15,30 +22,12 @@ import 'package:aufgaben_app/screens/4_5.dart';
             },
           ),
         ),
-*/
-
-const Map<String, Widget> tasks = {
-  '4.4.': Tasks44(),
-  "4.5.": Tasks45(),
-  "4.6.": Tasks46(),
-};
-
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: const Text('Aufgaben'),
-          backgroundColor: Colors.redAccent,
-        ),
         body: Center(
           child: SizedBox(
             width: 340,
             height: 650,
             child: GridView.builder(
-                itemCount: tasks.keys.length,
+                itemCount: tasks46.keys.length,
                 shrinkWrap: true,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
@@ -46,8 +35,8 @@ class HomeScreen extends StatelessWidget {
                     crossAxisSpacing: 30,
                     mainAxisSpacing: 20),
                 itemBuilder: (BuildContext context, int index) {
-                  String title = tasks.keys.elementAt(index);
-                  Widget pageWidget = tasks.values.elementAt(index);
+                  String title = tasks46.keys.elementAt(index);
+                  Widget pageWidget = tasks46.values.elementAt(index);
                   return ElevatedButton(
                     onPressed: () {
                       Navigator.push(
@@ -64,7 +53,7 @@ class HomeScreen extends StatelessWidget {
                                 BorderRadius.all(Radius.circular(10))),
                       ),
                       backgroundColor:
-                          WidgetStateProperty.all<Color>(Colors.redAccent),
+                          WidgetStateProperty.all<Color>(Colors.yellow),
                     ),
                     child: Text(
                       title,

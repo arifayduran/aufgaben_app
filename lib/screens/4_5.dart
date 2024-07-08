@@ -14,14 +14,9 @@ const Map<String, Widget> tasks45 = {
   "Bonus Komplexe Oberfläche": BonusKomplexeOberflaeche(),
 };
 
-class Tasks45 extends StatefulWidget {
+class Tasks45 extends StatelessWidget {
   const Tasks45({super.key});
 
-  @override
-  State<Tasks45> createState() => _Tasks45State();
-}
-
-class _Tasks45State extends State<Tasks45> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -17,14 +17,9 @@ const Map<String, Widget> tasks44 = {
   "ListView Warenkorb": BonnusRepoClassListWarenkorb(),
 };
 
-class Tasks44 extends StatefulWidget {
+class Tasks44 extends StatelessWidget {
   const Tasks44({super.key});
 
-  @override
-  State<Tasks44> createState() => _Tasks44State();
-}
-
-class _Tasks44State extends State<Tasks44> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
