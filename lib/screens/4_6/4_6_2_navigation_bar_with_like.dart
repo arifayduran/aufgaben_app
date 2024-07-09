@@ -18,14 +18,14 @@ Die “Destinations” der NavigationBar sollen dabei auf die drei Screens aus A
 
 import 'package:flutter/material.dart';
 
-class NavigationBarExercise extends StatefulWidget {
-  const NavigationBarExercise({super.key});
+class NavigationBarWithLike extends StatefulWidget {
+  const NavigationBarWithLike({super.key});
 
   @override
-  State<NavigationBarExercise> createState() => _NavigationBarExerciseState();
+  State<NavigationBarWithLike> createState() => _NavigationBarWithLikeState();
 }
 
-class _NavigationBarExerciseState extends State<NavigationBarExercise> {
+class _NavigationBarWithLikeState extends State<NavigationBarWithLike> {
   Map<String, Widget> screens = {
     "News": const NewsScreen(),
     "Likes": const LikesScreen(),
@@ -97,51 +97,129 @@ class _NavigationBarExerciseState extends State<NavigationBarExercise> {
   }
 }
 
-class NewsScreen extends StatelessWidget {
+class NewsScreen extends StatefulWidget {
   const NewsScreen({super.key});
 
   @override
+  State<NewsScreen> createState() => _NewsScreenState();
+}
+
+class _NewsScreenState extends State<NewsScreen> {
+  @override
   Widget build(BuildContext context) {
-    return const Center(
+    return Center(
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Text(
-            "News",
-            style: TextStyle(fontSize: 29),
+          const Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "News  ",
+                style: TextStyle(fontSize: 29),
+              ),
+              Icon(
+                Icons.newspaper,
+                size: 50,
+              ),
+            ],
           ),
-          Icon(
-            Icons.newspaper,
-            size: 50,
-          )
+          SizedBox(
+            height: 400,
+            child: ListView.builder(
+              itemCount: news.length,
+              itemBuilder: (context, index) {
+                final News newsItem = news.keys.toList()[index];
+                final bool isLiked = news[newsItem]!;
+                return ListTile(
+                    leading: Image.asset("assets/images/noimage.jpg"),
+                    title: Text(news.keys.toList()[index].title),
+                    subtitle: Text(news.keys.toList()[index].description),
+                    horizontalTitleGap: 30,
+                    dense: true,
+                    trailing: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          news[newsItem] = !isLiked;
+                          if (isLiked) {
+                            favoriteNews.remove(newsItem);
+                          } else {
+                            favoriteNews.add(newsItem);
+                          }
+                        });
+                      },
+                      child: Icon(
+                        Icons.favorite,
+                        color: isLiked ? Colors.red : Colors.grey,
+                      ),
+                    ));
+              },
+            ),
+          ),
         ],
       ),
     );
   }
 }
 
-class LikesScreen extends StatelessWidget {
+class LikesScreen extends StatefulWidget {
   const LikesScreen({super.key});
 
   @override
+  State<LikesScreen> createState() => _LikesScreenState();
+}
+
+class _LikesScreenState extends State<LikesScreen> {
+  @override
   Widget build(BuildContext context) {
-    return const Center(
+    return Center(
       child: Padding(
-        padding: EdgeInsets.all(27.0),
+        padding: const EdgeInsets.all(27.0),
         child: Column(
           children: [
-            Text(
+            const Text(
               "Likes",
               style: TextStyle(fontSize: 25),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Text(
+            const Text(
               "Hier findest du deine geliketen Nachrichten.",
               style: TextStyle(fontSize: 20),
               textAlign: TextAlign.center,
-            )
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            SizedBox(
+              height: 400,
+              child: ListView.builder(
+                itemCount: favoriteNews.length,
+                itemBuilder: (context, index) {
+                  final News newsItem = favoriteNews[index];
+                  return ListTile(
+                    leading: Image.asset("assets/images/noimage.jpg"),
+                    title: Text(favoriteNews[index].title),
+                    subtitle: Text(favoriteNews[index].description),
+                    dense: true,
+                    horizontalTitleGap: 30,
+                    trailing: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          news[newsItem] = false;
+                          favoriteNews.remove(newsItem);
+                        });
+                      },
+                      child: const Icon(
+                        Icons.favorite,
+                        color: Colors.red,
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
           ],
         ),
       ),
@@ -180,4 +258,40 @@ class ProfileScreen extends StatelessWidget {
       ),
     );
   }
+}
+
+/////////////////////////////////////
+
+Map<News, bool> news = {
+  News("News 1", "Description 1"): false,
+  News("News 2", "Description 2"): false,
+  News("News 3", "Description 3"): false,
+  News("News 4", "Description 4"): false,
+  News("News 5", "Description 5"): false,
+  News("News 6", "Description 6"): false,
+  News("News 7", "Description 7"): false,
+  News("News 8", "Description 8"): false,
+  News("News 9", "Description 9"): false,
+};
+
+List<News> favoriteNews = [];
+
+class News {
+  String title;
+  String description;
+
+  News(this.title, this.description);
+}
+
+Icon isLikedTrue() {
+  return const Icon(
+    Icons.favorite,
+    color: Colors.red,
+  );
+}
+
+Icon isLikedFalse() {
+  return const Icon(
+    Icons.favorite,
+  );
 }
