@@ -1,8 +1,10 @@
 import 'package:aufgaben_app/screens/4_6/4_6_1_navigation.dart';
+import 'package:aufgaben_app/screens/4_6/4_6_2_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
 const Map<String, Widget> tasks46 = {
   "FAB Navigation": FabNavigation(),
+  "Navigation Bar": NavigationBarExercise(),
 };
 
 class Tasks46 extends StatelessWidget {
