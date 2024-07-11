@@ -1,3 +1,15 @@
+/*
+Ziel: Entwickle eine individuelle Version einer Bildergalerie App für dein eigenes Portfolio. Drei von euch werden ihre eigene kreative Interpretation der App in der Vorlesung präsentieren.
+Präsentation: Am Montag werden drei von euch ihre Bildergalerie Apps vorstellen. Jeder präsentiert kurz die Oberfläche seiner App und erklärt dann den Aufbau und die Struktur des App-Codes.
+Beschreibung der App: Die Bildergalerie App soll eine benutzerfreundliche Oberfläche bieten, die es den Nutzern ermöglicht, Bilder in einer ansprechenden Grid- oder Listenansicht zu durchsuchen. Die App muss mindestens zwei Hauptbereiche in der Navigation enthalten. Zudem soll es eine Detailseite für jedes Bild geben, die beim Klicken auf ein Bild aufgerufen wird. Jeder Teilnehmer kann entscheiden, ob er die App basierend auf den bereitgestellten Screens abändert oder eine eigene kreative Richtung einschlägt. Jedoch sind die  folgenden Anforderungen umzusetzen:
+Anforderungen:
+Mindestens zwei Bereiche in der Navigation.
+Verwendung von GridView oder ListView auf einer Seite zur Anzeige von Bildern.
+Aufruf einer Detailseite beim Klick auf ein Bild für mehr Informationen.
+
+Außerdem: Die Basis der Entwicklung sind die Screenshots in den bereitgestellten Slides. Du hast die Freiheit, die App nach eigenen Vorstellungen anzupassen oder sie einem bestimmten Motto entsprechend zu gestalten. Ziel ist es, eine ansprechende und funktionale Bildergalerie App zu erstellen, die die persönliche Kreativität und Programmierfähigkeiten widerspiegelt.
+*/
+
 import 'package:flutter/material.dart';
 
 const Map<String, String> _mainItems = {
