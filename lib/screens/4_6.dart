@@ -1,10 +1,14 @@
 import 'package:aufgaben_app/screens/4_6/4_6_1_navigation.dart';
 import 'package:aufgaben_app/screens/4_6/4_6_2_navigation_bar_with_like.dart';
+import 'package:aufgaben_app/screens/4_6/4_6_3_projektstruktur.dart';
+import 'package:aufgaben_app/screens/4_6/4_6_4_gallery_sushiyana.dart';
 import 'package:flutter/material.dart';
 
 const Map<String, Widget> tasks46 = {
   "FAB Navigation": FabNavigation(),
   "Navigation Bar mit Favoriten": NavigationBarWithLike(),
+  "Projektstrukturen": ProjectStructure(),
+  "Gallerie Sushi Yana": GallerySushiyana()
 };
 
 class Tasks46 extends StatelessWidget {

@@ -36,64 +36,65 @@ class _NavigationBarWithLikeState extends State<NavigationBarWithLike> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text(screens.keys.toList()[currentIndex]),
-          centerTitle: true,
-          backgroundColor: Colors.lightGreen,
-          leading: IconButton(
-            icon: const Icon(Icons.arrow_back_ios_new),
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
+      appBar: AppBar(
+        title: Text(screens.keys.toList()[currentIndex]),
+        centerTitle: true,
+        backgroundColor: Colors.lightGreen,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios_new),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        ),
+      ),
+      body: screens.values.toList()[currentIndex],
+      bottomNavigationBar: NavigationBarTheme(
+        data: NavigationBarThemeData(
+          labelTextStyle: WidgetStateProperty.resolveWith<TextStyle>(
+            (Set<WidgetState> states) => states.contains(WidgetState.selected)
+                ? const TextStyle(color: Colors.white)
+                : const TextStyle(color: Color.fromARGB(255, 200, 255, 132)),
+          ),
+          iconTheme: WidgetStateProperty.resolveWith<IconThemeData>(
+            (Set<WidgetState> states) => states.contains(WidgetState.selected)
+                ? const IconThemeData(color: Colors.white)
+                : const IconThemeData(
+                    color: Color.fromARGB(255, 200, 255, 132)),
           ),
         ),
-        body: screens.values.toList()[currentIndex],
-        bottomNavigationBar: NavigationBarTheme(
-          data: NavigationBarThemeData(
-            labelTextStyle: WidgetStateProperty.resolveWith<TextStyle>(
-              (Set<WidgetState> states) => states.contains(WidgetState.selected)
-                  ? const TextStyle(color: Colors.white)
-                  : const TextStyle(color: Color.fromARGB(255, 200, 255, 132)),
-            ),
-            iconTheme: WidgetStateProperty.resolveWith<IconThemeData>(
-              (Set<WidgetState> states) => states.contains(WidgetState.selected)
-                  ? const IconThemeData(color: Colors.white)
-                  : const IconThemeData(
-                      color: Color.fromARGB(255, 200, 255, 132)),
-            ),
-          ),
-          child: NavigationBar(
-            destinations: const [
-              NavigationDestination(
-                icon: Icon(
-                  Icons.newspaper,
-                ),
-                label: "News",
+        child: NavigationBar(
+          destinations: const [
+            NavigationDestination(
+              icon: Icon(
+                Icons.newspaper,
               ),
-              NavigationDestination(
-                icon: Icon(
-                  Icons.favorite,
-                ),
-                label: "Likes",
+              label: "News",
+            ),
+            NavigationDestination(
+              icon: Icon(
+                Icons.favorite,
               ),
-              NavigationDestination(
-                icon: Icon(
-                  Icons.person,
-                ),
-                label: "Profile",
-              )
-            ],
-            selectedIndex: currentIndex,
-            onDestinationSelected: (index) {
-              setState(() {
-                currentIndex = index;
-              });
-            },
-            backgroundColor: Colors.lightGreen,
-            elevation: 3,
-            indicatorColor: const Color.fromARGB(255, 64, 152, 67),
-          ),
-        ));
+              label: "Likes",
+            ),
+            NavigationDestination(
+              icon: Icon(
+                Icons.person,
+              ),
+              label: "Profile",
+            )
+          ],
+          selectedIndex: currentIndex,
+          onDestinationSelected: (index) {
+            setState(() {
+              currentIndex = index;
+            });
+          },
+          backgroundColor: Colors.lightGreen,
+          elevation: 3,
+          indicatorColor: const Color.fromARGB(255, 64, 152, 67),
+        ),
+      ),
+    );
   }
 }
 
