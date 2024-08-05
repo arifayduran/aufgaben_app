@@ -1,4 +1,5 @@
 import 'package:aufgaben_app/screens/4_6.dart';
+import 'package:aufgaben_app/screens/Kapitel3_dart_wiederholung_bonusse/home.dart';
 import 'package:flutter/material.dart';
 import 'package:aufgaben_app/screens/4_4.dart';
 import 'package:aufgaben_app/screens/4_5.dart';
@@ -21,6 +22,7 @@ const Map<String, Widget> tasks = {
   '4.4.': Tasks44(),
   "4.5.": Tasks45(),
   "4.6.": Tasks46(),
+  "Kapitel 3 Dart Wied. Bonusse": BonusHomeScreen(),
 };
 
 class HomeScreen extends StatelessWidget {
