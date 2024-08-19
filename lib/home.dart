@@ -1,5 +1,7 @@
 import 'package:aufgaben_app/screens/4_6.dart';
 import 'package:aufgaben_app/screens/Kapitel3_dart_wiederholung_bonusse/home.dart';
+import 'package:aufgaben_app/screens/crud/crud_screen.dart';
+import 'package:aufgaben_app/screens/image_picker/image_picker_screen.dart';
 import 'package:aufgaben_app/screens/timer/timer_stopwatch_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:aufgaben_app/screens/4_4.dart';
@@ -25,6 +27,8 @@ const Map<String, Widget> tasks = {
   "4.6.": Tasks46(),
   "Kapitel 3 Dart Wied. Bonusse": BonusHomeScreen(),
   "Timer & Stopwatch": TimerStopwatchScreen(),
+  "Image Picker": ImagePickerScreen(),
+  "Crud Screen": CrudScreen(),
 };
 
 class HomeScreen extends StatelessWidget {
