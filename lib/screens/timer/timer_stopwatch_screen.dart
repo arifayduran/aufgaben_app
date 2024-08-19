@@ -48,14 +48,14 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 
-class TimerScreen extends StatefulWidget {
-  const TimerScreen({super.key});
+class TimerStopwatchScreen extends StatefulWidget {
+  const TimerStopwatchScreen({super.key});
 
   @override
-  State<TimerScreen> createState() => _TimerScreenState();
+  State<TimerStopwatchScreen> createState() => _TimerStopwatchScreenState();
 }
 
-class _TimerScreenState extends State<TimerScreen> {
+class _TimerStopwatchScreenState extends State<TimerStopwatchScreen> {
   bool isTimerRunning = false;
   bool isStopwatchRunning = false;
 
@@ -96,10 +96,8 @@ class _TimerScreenState extends State<TimerScreen> {
   void startStopwatch() {
     setState(() {
       isStopwatchRunning = true;
-      secondsElapsed = 0;
     });
-    stopwatch =
-        Timer.periodic(const Duration(milliseconds: 100), (Timer stopwatch) {
+    stopwatch = Timer.periodic(const Duration(seconds: 1), (Timer stopwatch) {
       setState(() {
         secondsElapsed++;
       });
@@ -148,7 +146,7 @@ class _TimerScreenState extends State<TimerScreen> {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: AppBar(
-          title: const Text("Timer"),
+          title: const Text("Timer & Stopwatch"),
           centerTitle: true,
           backgroundColor: Colors.transparent,
           leading: IconButton(
@@ -158,39 +156,63 @@ class _TimerScreenState extends State<TimerScreen> {
             },
           ),
         ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Timer: $timerMinutes:$timerSeconds',
-              style: const TextStyle(fontSize: 32),
-            ),
-            TextField(
-              keyboardType: TextInputType.number,
-              onChanged: (value) {
-                timerDuration = int.tryParse(value) ?? 0;
-              },
-              decoration: const InputDecoration(
-                  labelText: 'Gib die Timer-Dauer in Sekunden ein'),
-            ),
-            ElevatedButton(
-              onPressed: isTimerRunning ? stopTimer : startTimer,
-              child: Text(isTimerRunning ? 'Stoppen' : 'Starten'),
-            ),
-            const Divider(height: 50, color: Colors.black),
-            Text(
-              'Stopwatch: $minutes:$seconds',
-              style: const TextStyle(fontSize: 32),
-            ),
-            ElevatedButton(
-              onPressed: isStopwatchRunning ? stopStopwatch : startStopwatch,
-              child: Text(isStopwatchRunning ? 'Stoppen' : 'Starten'),
-            ),
-            ElevatedButton(
-              onPressed: resetStopwatch,
-              child: const Text('Zurücksetzen'),
-            ),
-          ],
+        body: SizedBox(
+          height: 500,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              const SizedBox(
+                height: 50,
+              ),
+              Text(
+                'Timer: $timerMinutes:$timerSeconds',
+                style: const TextStyle(fontSize: 32),
+              ),
+              SizedBox(
+                width: 250,
+                child: TextField(
+                  keyboardType: TextInputType.number,
+                  cursorColor: Colors.black,
+                  onChanged: (value) {
+                    timerDuration = int.tryParse(value) ?? 0;
+                  },
+                  decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10)),
+                      filled: true,
+                      fillColor: Colors.transparent,
+                      labelStyle: const TextStyle(color: Colors.black),
+                      labelText: 'Timer-Dauer in Sekunden'),
+                ),
+              ),
+              ElevatedButton(
+                onPressed: isTimerRunning ? stopTimer : startTimer,
+                child: Text(isTimerRunning ? 'Stoppen' : 'Starten'),
+              ),
+              const Divider(height: 50, color: Colors.black),
+              Text(
+                'Stopwatch: $minutes:$seconds',
+                style: const TextStyle(fontSize: 32),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton(
+                    onPressed:
+                        isStopwatchRunning ? stopStopwatch : startStopwatch,
+                    child: Text(isStopwatchRunning ? 'Stoppen' : 'Starten'),
+                  ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  ElevatedButton(
+                    onPressed: resetStopwatch,
+                    child: const Text('Zurücksetzen'),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );

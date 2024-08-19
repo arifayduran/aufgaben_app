@@ -1,6 +1,6 @@
 import 'package:aufgaben_app/screens/4_6.dart';
 import 'package:aufgaben_app/screens/Kapitel3_dart_wiederholung_bonusse/home.dart';
-import 'package:aufgaben_app/screens/timer/timer_screen.dart';
+import 'package:aufgaben_app/screens/timer/timer_stopwatch_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:aufgaben_app/screens/4_4.dart';
 import 'package:aufgaben_app/screens/4_5.dart';
@@ -24,7 +24,7 @@ const Map<String, Widget> tasks = {
   "4.5.": Tasks45(),
   "4.6.": Tasks46(),
   "Kapitel 3 Dart Wied. Bonusse": BonusHomeScreen(),
-  "Timer": TimerScreen(),
+  "Timer & Stopwatch": TimerStopwatchScreen(),
 };
 
 class HomeScreen extends StatelessWidget {
