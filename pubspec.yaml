@@ -35,6 +35,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.6
   provider: ^6.0.3
+  rive: ^0.13.12
 
 dev_dependencies:
   flutter_test:
@@ -56,6 +57,7 @@ flutter:
   assets:
     - assets/images/
     - assets/images/gallery_sushiyana/
+    - assets/animations/
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
