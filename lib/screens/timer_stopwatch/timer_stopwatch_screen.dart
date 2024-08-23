@@ -88,7 +88,7 @@ class _TimerStopwatchScreenState extends State<TimerStopwatchScreen> {
 
   void stopTimer() {
     setState(() {
-      isTimerRunning = false;
+      isTimerRunning = false; 
     });
     timer.cancel();
   }
@@ -177,6 +177,7 @@ class _TimerStopwatchScreenState extends State<TimerStopwatchScreen> {
                     timerDuration = int.tryParse(value) ?? 0;
                   },
                   decoration: InputDecoration(
+
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10)),
                       filled: true,
