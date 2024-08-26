@@ -34,7 +34,7 @@ class _ApiScreenState extends State<ApiScreen> {
                 return ListTile(
                   title: Text(snapshot.data![index].name),
                   subtitle: Text(
-                      '\$${snapshot.data![index].currentPrice.toStringAsFixed(2)}'),
+                      '\$ ${snapshot.data![index].currentPrice.toStringAsFixed(2)}'),
                   leading: Image.network(
                     snapshot.data![index].image,
                   ),
