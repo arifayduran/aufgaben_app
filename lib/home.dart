@@ -4,7 +4,6 @@ import 'package:aufgaben_app/screens/api_test/api_screen.dart';
 import 'package:aufgaben_app/screens/crud/crud_screen.dart';
 import 'package:aufgaben_app/screens/image_picker/image_picker_screen.dart';
 import 'package:aufgaben_app/screens/timer_stopwatch/timer_stopwatch_screen.dart';
-import 'package:aufgaben_app/screens/watercounter/watercounter_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:aufgaben_app/screens/4_4.dart';
 import 'package:aufgaben_app/screens/4_5.dart';
@@ -31,7 +30,6 @@ const Map<String, Widget> tasks = {
   "Timer & Stopwatch": TimerStopwatchScreen(),
   "Image Picker": ImagePickerScreen(),
   "Crud Screen": CrudScreen(),
-  "Watercounter": WatercounterScreen(),
   "API Test": ApiScreen(),
 };
 
