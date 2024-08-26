@@ -1,5 +1,6 @@
 import 'package:aufgaben_app/screens/4_6.dart';
 import 'package:aufgaben_app/screens/Kapitel3_dart_wiederholung_bonusse/home.dart';
+import 'package:aufgaben_app/screens/api_test/api_screen.dart';
 import 'package:aufgaben_app/screens/crud/crud_screen.dart';
 import 'package:aufgaben_app/screens/image_picker/image_picker_screen.dart';
 import 'package:aufgaben_app/screens/timer_stopwatch/timer_stopwatch_screen.dart';
@@ -31,6 +32,7 @@ const Map<String, Widget> tasks = {
   "Image Picker": ImagePickerScreen(),
   "Crud Screen": CrudScreen(),
   "Watercounter": WatercounterScreen(),
+  "API Test": ApiScreen(),
 };
 
 class HomeScreen extends StatelessWidget {
