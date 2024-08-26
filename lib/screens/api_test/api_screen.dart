@@ -35,6 +35,9 @@ class _ApiScreenState extends State<ApiScreen> {
                   title: Text(snapshot.data![index].name),
                   subtitle: Text(
                       '\$${snapshot.data![index].currentPrice.toStringAsFixed(2)}'),
+                  leading: Image.network(
+                    snapshot.data![index].image,
+                  ),
                 );
               },
             );
