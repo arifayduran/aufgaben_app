@@ -7,7 +7,7 @@ Future<List<Cryptocurrency>> fetchCryptocurrencies() async {
     Uri.parse('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd'),
   );
 
-  if (response.statusCode == 200) {
+  if (response.statusCode >= 200 && response.statusCode < 300) {
     List jsonResponse = json.decode(response.body);
     return jsonResponse.map((data) => Cryptocurrency.fromJson(data)).toList();
   } else {

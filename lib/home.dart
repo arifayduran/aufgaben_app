@@ -2,7 +2,9 @@ import 'package:aufgaben_app/screens/4_6.dart';
 import 'package:aufgaben_app/screens/Kapitel3_dart_wiederholung_bonusse/home.dart';
 import 'package:aufgaben_app/screens/api_test/api_screen.dart';
 import 'package:aufgaben_app/screens/crud/crud_screen.dart';
+import 'package:aufgaben_app/screens/dog_api/dog_api_screen.dart';
 import 'package:aufgaben_app/screens/image_picker/image_picker_screen.dart';
+import 'package:aufgaben_app/screens/quotes_api/quotes_api_screen.dart';
 import 'package:aufgaben_app/screens/timer_stopwatch/timer_stopwatch_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:aufgaben_app/screens/4_4.dart';
@@ -31,6 +33,8 @@ const Map<String, Widget> tasks = {
   "Image Picker": ImagePickerScreen(),
   "Crud Screen": CrudScreen(),
   "API Test": ApiScreen(),
+  "Dog API": DogApiScreen(),
+  "Quotes API": QuotesApiScreen(),
 };
 
 class HomeScreen extends StatelessWidget {
