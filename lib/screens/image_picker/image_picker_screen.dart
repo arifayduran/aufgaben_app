@@ -3,6 +3,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:path_provider/path_provider.dart';
 import 'dart:io';
 import 'package:shared_preferences/shared_preferences.dart';
+// ignore: depend_on_referenced_packages
 import 'package:path/path.dart' as path;
 
 class ImagePickerScreen extends StatefulWidget {
@@ -43,7 +44,7 @@ class _ImagePickerScreenState extends State<ImagePickerScreen> {
         await _saveImagePath(_imagePath!);
       }
     } catch (e) {
-      print("Fehler beim Auswählen eines Bildes: $e");
+      debugPrint("Fehler beim Auswählen eines Bildes: $e");
     }
   }
 

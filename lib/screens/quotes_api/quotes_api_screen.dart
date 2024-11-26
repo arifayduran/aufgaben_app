@@ -39,7 +39,7 @@ class _QuotesApiScreenState extends State<QuotesApiScreen> {
     final response = await http.get(
       Uri.parse(_selectedCategory == null || _selectedCategory == "all"
           ? "https://api.api-ninjas.com/v1/quotes"
-          : "https://api.api-ninjas.com/v1/quotes?category=${_selectedCategory}"),
+          : "https://api.api-ninjas.com/v1/quotes?category=$_selectedCategory"),
       headers: {'X-Api-Key': _myApiKey},
     );
 

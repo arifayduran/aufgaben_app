@@ -31,7 +31,7 @@ class GallerySushiyana extends StatefulWidget {
   const GallerySushiyana({super.key});
 
   @override
-  _GallerySushiyanaState createState() => _GallerySushiyanaState();
+  State<GallerySushiyana> createState() => _GallerySushiyanaState();
 }
 
 class _GallerySushiyanaState extends State<GallerySushiyana>
