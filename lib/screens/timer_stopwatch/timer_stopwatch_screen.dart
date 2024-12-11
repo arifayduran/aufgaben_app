@@ -134,9 +134,9 @@ class _TimerStopwatchScreenState extends State<TimerStopwatchScreen> {
       decoration: BoxDecoration(
         gradient: LinearGradient(
             colors: [
-              const Color(0xff61B688).withOpacity(0.8),
-              const Color(0xff61B688).withOpacity(0.5),
-              const Color(0xff61B688).withOpacity(0.2)
+              const Color(0xff61B688).withValues(alpha: .8),
+              const Color(0xff61B688).withValues(alpha: .5),
+              const Color(0xff61B688).withValues(alpha: .2)
             ],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,

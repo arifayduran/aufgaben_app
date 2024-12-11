@@ -106,7 +106,7 @@ class _FabNavigationState extends State<FabNavigation> {
                         ),
                         trailing: Text(
                             "${products[index].price.toStringAsFixed(2).replaceAll(".", ",")} €"),
-                        splashColor: Colors.redAccent.withOpacity(0.2),
+                        splashColor: Colors.redAccent.withValues(alpha: .2),
                         horizontalTitleGap: 10,
                         title: Text(
                           products[index].title,
